@@ -1,7 +1,6 @@
-source("./utils.r")
-library(cmdstanr)
+source("./src/utils.r")
 
-# Step 1: choose configuration
+# Step 1: choose a configuration
 conf <- list(
   seed = 10,
   N = 1000,
@@ -19,14 +18,14 @@ conf$prior <- list(
   alpha_zeta = c(1, 1)
 )
 
-# Step 3: Generate the parameters from the prior
+# Step 3: Generate parameters from the prior
 params <- generate_params(conf)
 
-# Step 4: Generate the data
+# Step 4: Generate data from the parameters
 data <- generate_data(conf, params)
 
-# Step 5: Generate posterior draws
+# Step 5: Generate posterior draws from the data
 draws <- generate_draws(conf, data)
 
 obj <- list(conf = conf, params = params, data = data)
-saveRDS(object = obj, file = "./data/test.rds")
+saveRDS(object = obj, file = "./data/temp/test.rds")
