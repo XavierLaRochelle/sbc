@@ -11,6 +11,8 @@ generate_y <- function(mu, kappa, j) {
   return(y)
 }
 
-source("./generate_params.r")
+source("./src/generate_params.r")
 
-source("./generate_data.r")
+source("./src/generate_data.r")
+
+source("./src/generate_draws.r")
