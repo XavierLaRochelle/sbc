@@ -19,10 +19,10 @@ prior <- list(
 )
 
 # Step 3: Generate parameters from the prior
-params <- generate_params(conf, prior)
+params <- do.call(generate_params, c(conf[-2], prior)) # N is not necessary for this step
 
 # Step 4: Generate data from the parameters
-data <- generate_data(conf, params)
+data <- do.call(generate_data, c(conf, params))
 
 # Step 5: Generate posterior draws from the data
 draws <- generate_draws(conf, data)

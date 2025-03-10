@@ -1,9 +1,5 @@
-generate_data <- function(conf, params) {
-  set.seed(conf$seed)
-  N <- conf$N
-  J <- conf$J
-  K <- conf$K
-
+generate_data <- function(seed, N, J, K, kappa, beta, gamma, lambda, omega, delta, zeta) {
+  set.seed(seed)
   d <- list()
   j <- sample(1:J, size = N, replace = TRUE)
   d$j <- j
@@ -14,14 +10,6 @@ generate_data <- function(conf, params) {
   }
   d$X <- X
   d$W <- W
-
-  kappa <- params$kappa
-  beta <- params$beta
-  gamma <- params$gamma
-  lambda <- params$lambda
-  omega <- params$omega
-  delta <- params$delta
-  zeta <- params$zeta
 
   mu <- c()
   eta_X <- mo(X, delta, j)
