@@ -1,14 +1,14 @@
-generate_params <- function(conf) {
+generate_params <- function(conf, prior) {
   require(extraDistr)
   set.seed(conf$seed)
   J <- conf$J
   K <- conf$K
-  mu_r2 <- conf$prior$mu_r2
-  phi_r2 <- conf$prior$phi_r2
-  alpha_pi <- conf$prior$alpha_pi
-  a_phi <- conf$prior$a_phi
-  alpha_delta <- conf$prior$alpha_delta
-  alpha_zeta <- conf$prior$alpha_zeta
+  mu_r2 <- prior$mu_r2
+  phi_r2 <- prior$phi_r2
+  alpha_pi <- prior$alpha_pi
+  a_phi <- prior$a_phi
+  alpha_delta <- prior$alpha_delta
+  alpha_zeta <- prior$alpha_zeta
 
   p <- list()
   pi <- rdirichlet(J, alpha_pi)

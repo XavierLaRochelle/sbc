@@ -9,7 +9,7 @@ conf <- list(
 )
 
 # Set 2: Choose the prior
-conf$prior <- list(
+prior <- list(
   mu_r2 = 0.1,
   phi_r2 = 0.5,
   a_phi = 1,
@@ -19,7 +19,7 @@ conf$prior <- list(
 )
 
 # Step 3: Generate parameters from the prior
-params <- generate_params(conf)
+params <- generate_params(conf, prior)
 
 # Step 4: Generate data from the parameters
 data <- generate_data(conf, params)
