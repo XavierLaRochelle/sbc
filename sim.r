@@ -1,4 +1,5 @@
-source("./src/utils.r")
+library(tidyverse)
+map(list.files("./src", full.names = TRUE), source, .progress = TRUE)
 
 # Step 1: choose a configuration
 conf <- list(

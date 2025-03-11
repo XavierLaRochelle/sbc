@@ -28,9 +28,3 @@ mo <- function(x, scale, j) {
   }
   return(eta)
 }
-
-source("./src/generate_params.r")
-
-source("./src/generate_data.r")
-
-source("./src/generate_draws.r")
